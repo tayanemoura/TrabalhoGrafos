@@ -7,7 +7,7 @@ package trabalhoGrafos;
 
 /**
  *
- * @author tayanemoura
+ * @author tayanemoura e carlossarcinelli
  */
 public class DFS {
 

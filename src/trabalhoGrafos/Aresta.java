@@ -7,7 +7,7 @@ package trabalhoGrafos;
 
 /**
  *
- * @author tayanemoura
+ * @author tayanemoura e carlossarcinelli
  */
 class Aresta {
     Vertice v1;

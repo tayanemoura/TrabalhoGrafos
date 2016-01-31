@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 /**
  *
- * @author tayanemoura
+ * @author tayanemoura e carlossarcinelli
  */
 public class Grafo {
 
@@ -29,7 +29,8 @@ public class Grafo {
 
     private Aresta addAresta(Vertice v1, Vertice v2) {
         Aresta e = new Aresta(v1, v2);
-        v1.addAdj(e);
+        v1.addAdj(v2);
+        v2.addAdj(v1);
         arestas.add(e);
         return e;
     }
@@ -39,9 +40,12 @@ public class Grafo {
         Vertice s = g.addVertice("s");
         Vertice t = g.addVertice("t");
         Vertice y = g.addVertice("y");
+        Vertice z = g.addVertice("z");
+        Vertice w = g.addVertice("w");
         Aresta st = g.addAresta(s, t);
         Aresta sy = g.addAresta(s, y);
         Aresta ty = g.addAresta(t, y);
+        Aresta zs = g.addAresta(z, s);
         return g;
     }
     @Override
@@ -49,8 +53,7 @@ public class Grafo {
         String r = "";
         for (Vertice u : vertices) {
             r += u.nome + " -- ";
-            for (Aresta e : u.adj) {
-                Vertice v = e.v2;
+            for (Vertice v : u.adj) {
                 r += v.nome + ", ";
             }
             r += "\n";

@@ -10,19 +10,20 @@ import java.util.List;
 
 /**
  *
- * @author tayanemoura
+ * @author tayanemoura e carlossarcinelli
  */
 class Vertice {
 
     String nome;
-    List<Aresta> adj;
+    //lista dos vértices adjacentes
+    List<Vertice> adj;
 
     Vertice(String nome) {
         this.nome = nome;
         this.adj = new ArrayList<>();
     }
 
-    void addAdj(Aresta e) {
-        adj.add(e);
+    void addAdj(Vertice v) {
+        adj.add(v);
     }
 }
