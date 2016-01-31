@@ -27,9 +27,9 @@ public class Grafo {
         return v;
     }
 
-    private Aresta addAresta(Vertice origem, Vertice destino) {
-        Aresta e = new Aresta(origem, destino);
-        origem.addAdj(e);
+    private Aresta addAresta(Vertice v1, Vertice v2) {
+        Aresta e = new Aresta(v1, v2);
+        v1.addAdj(e);
         arestas.add(e);
         return e;
     }
@@ -42,16 +42,15 @@ public class Grafo {
         Aresta st = g.addAresta(s, t);
         Aresta sy = g.addAresta(s, y);
         Aresta ty = g.addAresta(t, y);
-        Aresta yt = g.addAresta(y, t);
         return g;
     }
     @Override
     public String toString() {
         String r = "";
         for (Vertice u : vertices) {
-            r += u.nome + " -> ";
+            r += u.nome + " -- ";
             for (Aresta e : u.adj) {
-                Vertice v = e.destino;
+                Vertice v = e.v2;
                 r += v.nome + ", ";
             }
             r += "\n";

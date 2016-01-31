@@ -10,11 +10,11 @@ package trabalhoGrafos;
  * @author tayanemoura
  */
 class Aresta {
-    Vertice origem;
-    Vertice destino;
+    Vertice v1;
+    Vertice v2;
 
-    Aresta(Vertice origem, Vertice destino) {
-        this.origem = origem;
-        this.destino = destino;
+    Aresta(Vertice v1, Vertice v2) {
+        this.v1 = v1;
+        this.v2 = v2;
     }
 }
