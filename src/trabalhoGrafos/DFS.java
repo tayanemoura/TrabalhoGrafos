@@ -5,24 +5,21 @@
  */
 package trabalhoGrafos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author tayanemoura
  */
-class Vertice {
+public class DFS {
 
-    String nome;
-    List<Aresta> adj;
+    
+    public static void dfs(Grafo g) {
 
-    Vertice(String nome) {
-        this.nome = nome;
-        this.adj = new ArrayList<>();
     }
 
-    void addAdj(Aresta e) {
-        adj.add(e);
+    public static void main(String[] args) {
+        Grafo g = new Grafo();
+        g = g.geraGrafo();
+        System.out.println(g);
     }
+
 }

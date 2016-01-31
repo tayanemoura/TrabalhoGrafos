@@ -17,23 +17,35 @@ public class Grafo {
     List<Aresta> arestas;
 
     public Grafo() {
-        vertices = new ArrayList<Vertice>();
-        arestas = new ArrayList<Aresta>();
+        vertices = new ArrayList<>();
+        arestas = new ArrayList<>();
     }
 
-    Vertice addVertice(String nome) {
+    private Vertice addVertice(String nome) {
         Vertice v = new Vertice(nome);
         vertices.add(v);
         return v;
     }
 
-    Aresta addAresta(Vertice origem, Vertice destino) {
+    private Aresta addAresta(Vertice origem, Vertice destino) {
         Aresta e = new Aresta(origem, destino);
         origem.addAdj(e);
         arestas.add(e);
         return e;
     }
-
+    //depois modificar para a geração de grafos que ele pediu (aleatório e com prob)
+    public Grafo geraGrafo (){
+        Grafo g = new Grafo();
+        Vertice s = g.addVertice("s");
+        Vertice t = g.addVertice("t");
+        Vertice y = g.addVertice("y");
+        Aresta st = g.addAresta(s, t);
+        Aresta sy = g.addAresta(s, y);
+        Aresta ty = g.addAresta(t, y);
+        Aresta yt = g.addAresta(y, t);
+        return g;
+    }
+    @Override
     public String toString() {
         String r = "";
         for (Vertice u : vertices) {
@@ -47,15 +59,4 @@ public class Grafo {
         return r;
     }
 
-    public static void main(String[] args) {
-        Grafo g = new Grafo();
-        Vertice s = g.addVertice("s");
-        Vertice t = g.addVertice("t");
-        Vertice y = g.addVertice("y");
-        Aresta st = g.addAresta(s, t);
-        Aresta sy = g.addAresta(s, y);
-        Aresta ty = g.addAresta(t, y);
-        Aresta yt = g.addAresta(y, t);
-        System.out.println(g);
-    }
 }
