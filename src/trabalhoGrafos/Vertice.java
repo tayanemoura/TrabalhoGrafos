@@ -10,13 +10,15 @@ import java.util.List;
 
 /**
  *
- * @author tayanemoura e carlossarcinelli
+ * @author tayanemoura
  */
 class Vertice {
 
     String nome;
-    //lista dos vértices adjacentes
     List<Vertice> adj;
+    private int PE;
+    private int PS;
+    private Vertice pai;
 
     Vertice(String nome) {
         this.nome = nome;
@@ -25,5 +27,24 @@ class Vertice {
 
     void addAdj(Vertice v) {
         adj.add(v);
+    }
+    
+    void setPai(Vertice v){
+        this.pai = v;
+    }
+    void setPE (int n){
+        this.PE = n;
+    }
+    void setPS(int n){
+        this.PS = n;
+    }
+    Vertice getPai(){
+        return this.pai;
+    }
+    int getPE (){
+        return this.PE;
+    }
+    int getPS(){
+        return this.PS;
     }
 }
